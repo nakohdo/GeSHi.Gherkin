@@ -3,7 +3,7 @@
  * gherkin.php
  * --------
  * Author: Frank Ralf (Frank.Ralf@gmx.net)
- * Copyright: (c) 2014 Frank Ralf
+ * Copyright: (c) 2013 Frank Ralf
  * Release Version: 1.0.0.0
  * Date Started: 2013/10/14
  *
@@ -85,7 +85,7 @@ $language_data = array (
             4 => 'font-weight: bold;',
             5 => 'font-weight: bold;',
             6 => 'font-weight: bold;',
-            ),            
+            ),
         'COMMENTS' => array(
             0 => 'color: #303050;background-color: #F5F5F5',
             1 => 'color: blue;',
