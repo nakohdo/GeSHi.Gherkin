@@ -9,5 +9,5 @@ Gherkin language file for GeSHi (http://qbnz.com/highlighter/).
   by Frank Ralf.
 
 ## Gherkin documentation
-     - https://github.com/cucumber/cucumber/wiki/Gherkin
-     - http://docs.behat.org/guides/1.gherkin.html
+- https://github.com/cucumber/cucumber/wiki/Gherkin
+- http://docs.behat.org/guides/1.gherkin.html
