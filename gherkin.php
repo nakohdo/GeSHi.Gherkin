@@ -36,74 +36,73 @@
 
 $language_data = array (
     'LANG_NAME' => 'Gherkin',
-    'COMMENT_SINGLE' => array(),
+    'COMMENT_SINGLE' => array(1 => '//', 2 => '#'),
     'COMMENT_MULTI' => array(),
     //Keys
     'COMMENT_REGEXP' => array( // ENTRY ZERO  SHOULD CHECK FOR (\n(\s*)([^#%]+?):(\s+)(!!(\w+)(\s+))?) AS A LOOKBEHIND, BUT IT CAN'T.
         0 => '/(?<=\s[\|>]\n)(\s+)(.*)((?=[\n$])(([\n^](\1(.*)|(?=[\n$])))*)|$)/', // Pipe blocks and > blocks.
-        1 => '/#(.*)/', // Blue # comments
-        2 => '/%(.*)/', // Red % comments
-        3 => '/(^|\n)([^#%^\n]+?)(?=: )/',  // Key-value names
-        4 => '/(^|\n)([^#%^\n]+?)(?=:\n)/',// Key-group names
-        5 => '/(?<=^---)(\s*)!(\S+)/',    // Comments after ---
-        6 => '/(?<=: )(\s*)\&(\S+)/',    // References
-        7 => '/(?<=: )(\s*)\*(\S+)/',   // Dereferences
-        8 => '/!!(\w+)/',              // Types
+        1 => '/#(.*)/', // Grey # comments
+        #2 => '/%(.*)/', // Red % comments
+        #3 => '/(^|\n)([^#%^\n]+?)(?=: )/',  // Key-value names
+        #4 => '/(^|\n)([^#%^\n]+?)(?=:\n)/',// Key-group names
+        #5 => '/(?<=^---)(\s*)!(\S+)/',    // Comments after ---
+        #6 => '/(?<=: )(\s*)\&(\S+)/',    // References
+        #7 => '/(?<=: )(\s*)\*(\S+)/',   // Dereferences
+        #8 => '/!!(\w+)/',              // Types
         //9 => '/(?<=\n)(\s*)-(?!-)/',       // List items: This needs to search within comments 3 and 4, but I don't know how.
         ),
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
+    'QUOTEMARKS' => array('"', '&lt;', '&gt'),
     'ESCAPE_CHAR' => '',
     'KEYWORDS' => array(
-        1 => array('Feature'),
+        1 => array('Feature:', 'Business Need:', 'Ability:'),
         2 => array('Given', 'When', 'Then'),
-        3 => array('Scenario', 'Outline', 'Template'),
+        3 => array('Scenario:', 'Scenario Outline:', 'Scenario Template:'),
         4 => array('And', 'But'),
-        5 => array('Background'),
-        6 => array('Examples', 'Scenarios'),
+        5 => array('Background:'),
+        6 => array('Examples:', 'Scenarios:'),
         ),
     'SYMBOLS' => array(
-        1 => array('---', '...'),
-        2 => array(': ', ">\n", "|\n", '<<:', ":\n") // It'd be nice if I could specify that the colon must
-        //                                              follow comment 3 or 4 to be considered, and the > and |
-        //                                              must follow such a colon.
+        1 => array('@'),
+        2 => array(': '), 
         ),
     'CASE_SENSITIVE' => array(
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        5 => false,
-        6 => false,
+        1 => true,
+        2 => true,
+        3 => true,
+        4 => true,
+        5 => true,
+        6 => true,
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
-            1 => 'font-weight: bold;',
-            2 => 'font-weight: bold;',
-            3 => 'font-weight: bold;',
-            4 => 'font-weight: bold;',
-            5 => 'font-weight: bold;',
-            6 => 'font-weight: bold;',
+            1 => 'color:#FF0080; font-weight: bold;',
+            2 => 'color:#008000; font-weight: bold;',
+            3 => 'color:#0000FF; font-weight: bold;',
+            4 => 'color:#008000; font-weight: normal;',
+            5 => 'color:#FF8000; font-weight: bold;',
+            6 => 'color:#0000A0; font-weight: bold;',
             ),
         'COMMENTS' => array(
-            0 => 'color: #303050;background-color: #F5F5F5',
-            1 => 'color: blue;',
+            0 => 'color: #808080;background-color: #F5F5F5',
+            1 => 'color: #808080; font-style:italic',
             2 => 'font-weight: bold; color: red;',
             3 => 'color: green;',
             4 => 'color: #007F45;',
             5 => 'color: #7f7fFF;',
             6 => 'color: #FF7000;',
             7 => 'color: #FF45C0;',
-            8 => 'font-weight: bold; color: #005F5F;',
-            //9 => 'font-weight: bold; color: #000000;',
+            8 => 'font-weight: bold; color: #005F5F;',            
             ),
         'ESCAPE_CHAR' => array(
             ),
         'BRACKETS' => array(
             ),
         'STRINGS' => array(
-            0 => 'color: #CF00CF;'
+            0 => 'color: #0080C0;',
+            1 => 'color: lime;',
+            2 => 'color: red;',
             ),
         'NUMBERS' => array(
             0 => 'color: #33f;' // Don't highlight numbers, really...
@@ -113,8 +112,8 @@ $language_data = array (
             2 => '',
             ),
         'SYMBOLS' => array(
-            1 => 'color: cyan;',
-            2 => 'font-weight: bold; color: brown;',
+            1 => 'color: magenta;',
+            2 => 'font-weight: normal; color: black;',
             ),
         'REGEXPS' => array(
             ),

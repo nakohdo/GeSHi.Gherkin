@@ -1,7 +1,7 @@
 # GeSHi.Gherkin
 
 
-Gherkin language file for GeSHi (http://qbnz.com/highlighter/).
+Gherkin language file 'gherkin.php' for GeSHi (http://qbnz.com/highlighter/).
 
 - This file is based on yaml.php by Josh Ventura (JoshV10@gmail.com)
 - and the Gherkin user defined language file for Notepad++ (http://notepad-plus-plus.org)
